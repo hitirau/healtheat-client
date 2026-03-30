@@ -9,35 +9,27 @@
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{--green:#5C7A5A;--green-light:#EBF3EB;--cream:#F7F4EE;--charcoal:#1C1C1A;--stone:#8B8176;--border:#E8E4DC}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F5F5F0;color:var(--charcoal);font-size:14px;max-width:480px;margin:0 auto;min-height:100vh}
-
-/* NAV */
 .nav{background:#fff;border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.nav-logo{font-size:18px;font-weight:700;color:var(--charcoal)}.nav-logo span{color:var(--green)}
+.nav-logo{display:flex;align-items:center;gap:8px}
+.nav-logo img{width:32px;height:32px;border-radius:50%}
+.nav-logo-text{font-size:18px;font-weight:700;color:var(--charcoal)}.nav-logo-text span{color:var(--green)}
 .nav-right{display:flex;align-items:center;gap:10px}
 .nav-btn{background:none;border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer;color:var(--charcoal)}
 .nav-btn.primary{background:var(--green);color:#fff;border-color:var(--green)}
 .nav-account{width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;cursor:pointer;border:none}
-
-/* PAGES */
 .page{display:none;padding-bottom:80px}
 .page.active{display:block}
-
-/* HERO */
 .hero{background:var(--charcoal);padding:24px 16px 20px;color:#fff;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(92,122,90,0.15)}
 .hero-tag{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px}
-.hero-title{font-size:26px;font-weight:700;line-height:1.2;margin-bottom:8px}
-.hero-title span{color:#A8BFA6}
-.hero-sub{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6;margin-bottom:16px}
-.hero-cta{background:var(--green);color:#fff;border:none;border-radius:10px;padding:12px 20px;font-size:13px;font-weight:700;cursor:pointer;width:100%}
+.hero-slogan{font-size:28px;font-weight:800;line-height:1.1;margin-bottom:10px;color:#fff}
+.hero-slogan span{color:#A8BFA6}
+.hero-sub{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.65;margin-bottom:16px}
+.hero-cta{background:var(--green);color:#fff;border:none;border-radius:10px;padding:13px 20px;font-size:13px;font-weight:700;cursor:pointer;width:100%}
 .cutoff-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border-radius:20px;padding:5px 10px;font-size:11px;color:rgba(255,255,255,0.7);margin-top:10px}
-
-/* SECTIONS */
 .section{padding:16px}
-.section-title{font-size:16px;font-weight:700;margin-bottom:12px;color:var(--charcoal)}
+.section-title{font-size:16px;font-weight:700;margin-bottom:12px}
 .section-sub{font-size:12px;color:var(--stone);margin-bottom:12px}
-
-/* MENU CARDS */
 .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .menu-card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border);cursor:pointer;transition:transform 0.15s}
 .menu-card:active{transform:scale(0.97)}
@@ -46,23 +38,29 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .menu-card-name{font-size:12px;font-weight:700;margin-bottom:3px}
 .menu-card-desc{font-size:10px;color:var(--stone);line-height:1.4;margin-bottom:6px}
 .menu-card-prix{font-size:13px;font-weight:700;color:var(--green)}
-
-/* PACKAGES */
 .pkg-list{display:flex;flex-direction:column;gap:10px}
-.pkg-card{background:#fff;border-radius:12px;padding:14px;border:1px solid var(--border);cursor:pointer;transition:transform 0.15s;display:flex;justify-content:space-between;align-items:center}
+.pkg-card{background:#fff;border-radius:12px;padding:16px;border:1px solid var(--border);cursor:pointer;transition:transform 0.15s}
 .pkg-card:active{transform:scale(0.98)}
 .pkg-card.featured{background:var(--charcoal);color:#fff;border-color:var(--charcoal)}
-.pkg-card-left{}
-.pkg-card-name{font-size:14px;font-weight:700;margin-bottom:3px}
+.pkg-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
+.pkg-card-name{font-size:16px;font-weight:700}
 .pkg-card.featured .pkg-card-name{color:#fff}
-.pkg-card-desc{font-size:11px;color:var(--stone);line-height:1.4}
+.pkg-card-desc{font-size:12px;color:var(--stone);line-height:1.5;margin-bottom:10px}
 .pkg-card.featured .pkg-card-desc{color:rgba(255,255,255,0.6)}
-.pkg-card-prix{font-size:15px;font-weight:700;color:var(--green);white-space:nowrap;margin-left:12px}
+.pkg-card-bottom{display:flex;justify-content:space-between;align-items:center}
+.pkg-card-prix{font-size:18px;font-weight:700;color:var(--green)}
 .pkg-card.featured .pkg-card-prix{color:#A8BFA6}
-.remise-badge{font-size:10px;background:#E8F5E9;color:#2E7D32;padding:2px 7px;border-radius:10px;font-weight:700;margin-top:4px;display:inline-block}
+.remise-badge{font-size:10px;background:#E8F5E9;color:#2E7D32;padding:3px 8px;border-radius:10px;font-weight:700}
 .pkg-card.featured .remise-badge{background:rgba(92,122,90,0.3);color:#A8BFA6}
-
-/* PETITS DEJ */
+.pkg-cta{font-size:12px;font-weight:700;color:var(--green);background:var(--green-light);border:none;border-radius:8px;padding:6px 12px;cursor:pointer}
+.pkg-card.featured .pkg-cta{background:rgba(255,255,255,0.15);color:#fff}
+.pkg-sm-list{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.pkg-sm{background:#fff;border-radius:10px;padding:12px 14px;border:1px solid var(--border);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.pkg-sm:active{transform:scale(0.98)}
+.pkg-sm-left{}
+.pkg-sm-name{font-size:13px;font-weight:700;margin-bottom:2px}
+.pkg-sm-desc{font-size:11px;color:var(--stone)}
+.pkg-sm-prix{font-size:14px;font-weight:700;color:var(--green);white-space:nowrap;margin-left:12px}
 .pdj-list{display:flex;flex-direction:column;gap:8px}
 .pdj-card{background:#fff;border-radius:12px;padding:12px 14px;border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;gap:12px;transition:transform 0.15s}
 .pdj-card:active{transform:scale(0.98)}
@@ -73,23 +71,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .pdj-right{text-align:right}
 .pdj-prix{font-size:13px;font-weight:700;color:var(--green)}
 .pdj-kcal{font-size:10px;color:var(--stone)}
-
-/* COMPOSE */
 .compose-section{background:#fff;border-radius:12px;padding:14px;border:1px solid var(--border);margin:0 16px}
-.compose-cat{margin-bottom:12px}
+.compose-cat{margin-bottom:14px}
 .compose-cat-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--green);margin-bottom:8px}
 .compose-items{display:flex;flex-wrap:wrap;gap:6px}
-.compose-item{padding:6px 12px;border-radius:20px;border:1px solid var(--border);font-size:12px;cursor:pointer;background:#fff;color:var(--charcoal);font-weight:500;transition:all 0.15s}
+.compose-item{padding:6px 12px;border-radius:20px;border:1px solid var(--border);font-size:12px;cursor:pointer;background:#fff;color:var(--charcoal);font-weight:500}
 .compose-item.selected{background:var(--green);color:#fff;border-color:var(--green)}
-.compose-qty{display:flex;align-items:center;gap:8px;margin-top:6px}
+.compose-qty{display:flex;align-items:center;gap:8px;margin-top:8px;background:var(--cream);border-radius:8px;padding:6px 10px}
 .compose-qty-label{font-size:12px;color:var(--stone);flex:1}
 .qty-btn{width:28px;height:28px;border-radius:50%;border:1px solid var(--border);background:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700}
 .qty-val{font-size:13px;font-weight:700;min-width:40px;text-align:center}
-.compose-total-bar{background:var(--charcoal);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;margin:0 16px;border-radius:12px;margin-top:12px}
+.compose-total-bar{background:var(--charcoal);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;margin:12px 16px 0;border-radius:12px}
 .compose-total-label{font-size:12px;color:rgba(255,255,255,0.6)}
 .compose-total-val{font-size:18px;font-weight:700;color:#A8BFA6}
-
-/* BOTTOM BAR */
 .bottom-bar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:#fff;border-top:1px solid var(--border);padding:10px 16px;display:flex;gap:8px;z-index:100}
 .bottom-btn{flex:1;padding:12px;border-radius:10px;font-size:13px;font-weight:700;border:none;cursor:pointer}
 .bottom-btn.primary{background:var(--green);color:#fff}
@@ -98,8 +92,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .bnav-item{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10px;color:var(--stone);cursor:pointer;padding:4px 12px;border-radius:8px;border:none;background:none;font-weight:500}
 .bnav-item.active{color:var(--green)}
 .bnav-item span{font-size:20px}
-
-/* PANIER */
 .cart-badge{position:absolute;top:-4px;right:-4px;background:#F44336;color:#fff;font-size:9px;font-weight:700;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
 .cart-icon{position:relative;display:inline-block}
 .cart-item{background:#fff;border-radius:12px;padding:12px 14px;border:1px solid var(--border);margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
@@ -110,8 +102,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .cart-total{background:var(--charcoal);color:#fff;border-radius:12px;padding:14px;margin-bottom:12px}
 .cart-total-row{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;color:rgba(255,255,255,0.7)}
 .cart-total-row.big{font-size:16px;font-weight:700;color:#fff;margin-bottom:0}
-
-/* DATE PICKER */
 .date-list{display:flex;flex-direction:column;gap:8px}
 .date-item{background:#fff;border-radius:10px;padding:12px 14px;border:2px solid var(--border);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
 .date-item.selected{border-color:var(--green);background:var(--green-light)}
@@ -119,8 +109,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .date-item-full{font-size:11px;color:var(--stone)}
 .date-check{width:20px;height:20px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
 .date-item.selected .date-check{background:var(--green);border-color:var(--green);color:#fff}
-
-/* PAIEMENT */
 .pay-list{display:flex;flex-direction:column;gap:8px}
 .pay-item{background:#fff;border-radius:10px;padding:14px;border:2px solid var(--border);cursor:pointer;display:flex;align-items:center;gap:12px}
 .pay-item.selected{border-color:var(--green);background:var(--green-light)}
@@ -128,11 +116,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .pay-info{flex:1}
 .pay-name{font-size:13px;font-weight:700}
 .pay-desc{font-size:11px;color:var(--stone)}
-.pay-radio{width:18px;height:18px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center}
+.pay-radio{width:18px;height:18px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .pay-item.selected .pay-radio{background:var(--green);border-color:var(--green)}
 .pay-item.selected .pay-radio::after{content:'';width:6px;height:6px;border-radius:50%;background:#fff;display:block}
-
-/* AUTH */
 .auth-box{background:#fff;border-radius:16px;padding:24px;margin:16px;border:1px solid var(--border)}
 .auth-title{font-size:20px;font-weight:700;margin-bottom:6px}
 .auth-sub{font-size:13px;color:var(--stone);margin-bottom:20px}
@@ -141,15 +127,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .auth-btn{width:100%;padding:13px;border-radius:10px;background:var(--green);color:#fff;border:none;font-size:14px;font-weight:700;cursor:pointer;margin-bottom:10px}
 .auth-link{font-size:12px;color:var(--green);text-align:center;cursor:pointer;font-weight:600}
 .auth-error{font-size:12px;color:#EF5350;margin-bottom:8px;padding:8px 12px;background:#FFEBEE;border-radius:8px}
-
-/* COMPTE */
 .account-header{background:var(--charcoal);padding:24px 16px;color:#fff;text-align:center}
 .account-avatar{width:60px;height:60px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;margin:0 auto 10px}
 .account-name{font-size:18px;font-weight:700}
 .account-email{font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px}
 .account-section{padding:16px}
 .account-card{background:#fff;border-radius:12px;border:1px solid var(--border);overflow:hidden;margin-bottom:12px}
-.account-item{padding:12px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);cursor:pointer}
+.account-item{padding:12px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
 .account-item:last-child{border-bottom:none}
 .account-item-label{font-size:13px;font-weight:600}
 .account-item-val{font-size:12px;color:var(--stone)}
@@ -164,8 +148,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .status-pill.livree{background:#C8E6C9;color:#1B5E20}
 .status-pill.attente{background:#FFF3CD;color:#8B6914}
 .status-pill.livraison{background:#E3F2FD;color:#1565C0}
-
-/* CONFIRMATION */
 .confirm-box{text-align:center;padding:32px 16px}
 .confirm-icon{font-size:64px;margin-bottom:16px}
 .confirm-title{font-size:22px;font-weight:700;margin-bottom:8px}
@@ -173,16 +155,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .confirm-details{background:#fff;border-radius:12px;padding:14px;border:1px solid var(--border);text-align:left;margin-bottom:20px}
 .confirm-row{display:flex;justify-content:space-between;padding:5px 0;font-size:13px;border-bottom:1px solid var(--border)}
 .confirm-row:last-child{border-bottom:none;font-weight:700}
-
-.loading-spin{text-align:center;padding:32px;color:var(--stone)}
-.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--charcoal);color:#fff;padding:10px 20px;border-radius:20px;font-size:13px;font-weight:600;z-index:999;display:none}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--charcoal);color:#fff;padding:10px 20px;border-radius:20px;font-size:13px;font-weight:600;z-index:999;display:none;white-space:nowrap}
 .toast.show{display:block}
 </style>
 </head>
 <body>
 
 <div class="nav">
-  <div class="nav-logo">Health<span>Eat</span></div>
+  <div class="nav-logo">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%231C1C1A'/%3E%3Cellipse cx='50' cy='62' rx='28' ry='18' fill='%235C7A5A'/%3E%3Cellipse cx='50' cy='58' rx='28' ry='18' fill='%2378A876'/%3E%3Cellipse cx='50' cy='55' rx='26' ry='8' fill='%235C7A5A'/%3E%3Cellipse cx='50' cy='52' rx='24' ry='6' fill='%23A8BFA6'/%3E%3Cpath d='M50 15 Q45 30 50 38 Q55 30 50 15Z' fill='%235C7A5A'/%3E%3Cpath d='M38 22 Q36 35 42 40 Q46 32 38 22Z' fill='%235C7A5A'/%3E%3Cpath d='M62 22 Q64 35 58 40 Q54 32 62 22Z' fill='%235C7A5A'/%3E%3C/svg%3E" alt="HealthEat"/>
+    <span class="nav-logo-text">Health<span>Eat</span></span>
+  </div>
   <div class="nav-right" id="nav-right">
     <button class="nav-btn" onclick="showAuth('login')">Connexion</button>
     <button class="nav-btn primary" onclick="showAuth('register')">S'inscrire</button>
@@ -191,12 +174,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <div class="toast" id="toast"></div>
 
-<!-- PAGE: ACCUEIL -->
+<!-- ACCUEIL -->
 <div class="page active" id="page-home">
   <div class="hero">
-    <div class="hero-tag">Livraison Tahiti · Punaauia → Mahina</div>
-    <h1 class="hero-title">Manger sain,<br><span>sans compromis</span></h1>
-    <p class="hero-sub">Plats 100% personnalisables, préparés chaque matin et livrés avant 12h30 sur votre lieu de travail.</p>
+    <div class="hero-tag">Livraisons de Punaauia (Punaruu) à Mahina (Pointe Vénus)</div>
+    <h1 class="hero-slogan">Clean Bites,<br><span>Real Gains</span></h1>
+    <p class="hero-sub">Manger sain et sans compromis. Des plats personnalisables préparés chaque matin et livrés avant 12h30 sur votre lieu de travail.</p>
     <button class="hero-cta" onclick="showPage('page-compose')">Je compose mon plat →</button>
     <div class="cutoff-badge">⏰ Commandes jusqu'à 9h30</div>
   </div>
@@ -209,6 +192,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div class="section">
     <div class="section-title">Nos packages</div>
     <div class="pkg-list" id="pkg-list"></div>
+    <div class="pkg-sm-list" id="pkg-sm-list"></div>
   </div>
 
   <div class="section">
@@ -218,7 +202,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 </div>
 
-<!-- PAGE: JE COMPOSE -->
+<!-- JE COMPOSE -->
 <div class="page" id="page-compose">
   <div class="section">
     <div class="section-title">Je Compose</div>
@@ -231,7 +215,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 </div>
 
-<!-- PAGE: PANIER -->
+<!-- PANIER -->
 <div class="page" id="page-cart">
   <div class="section">
     <div class="section-title">Mon panier</div>
@@ -242,19 +226,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="section-title" style="margin-top:16px">Mode de paiement</div>
     <div class="pay-list" id="pay-list"></div>
     <div style="margin-top:16px">
-      <div class="fg" style="margin-bottom:10px">
-        <label style="font-size:12px;font-weight:600;color:var(--stone);display:block;margin-bottom:6px">Adresse de livraison</label>
-        <input id="cart-addr" style="width:100%;padding:12px;border-radius:10px;border:1px solid var(--border);font-size:13px;outline:none" placeholder="Ex: Cabinet ORL Paofai, Papeete"/>
-      </div>
+      <label style="font-size:12px;font-weight:600;color:var(--stone);display:block;margin-bottom:6px">Adresse de livraison</label>
+      <input id="cart-addr" style="width:100%;padding:12px;border-radius:10px;border:1px solid var(--border);font-size:13px;outline:none" placeholder="Ex: Cabinet ORL Paofai, Papeete"/>
     </div>
   </div>
   <div class="bottom-bar">
     <button class="bottom-btn secondary" onclick="showPage('page-home')">← Continuer</button>
-    <button class="bottom-btn primary" onclick="validerCommande()">Valider la commande</button>
+    <button class="bottom-btn primary" onclick="validerCommande()">Valider</button>
   </div>
 </div>
 
-<!-- PAGE: CONFIRMATION -->
+<!-- CONFIRMATION -->
 <div class="page" id="page-confirm">
   <div class="confirm-box">
     <div class="confirm-icon">🎉</div>
@@ -265,12 +247,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 </div>
 
-<!-- PAGE: COMPTE -->
+<!-- COMPTE -->
 <div class="page" id="page-account">
   <div id="account-content"></div>
 </div>
 
-<!-- PAGE: AUTH -->
+<!-- AUTH -->
 <div class="page" id="page-auth">
   <div style="padding-top:16px">
     <div class="auth-box" id="auth-box"></div>
@@ -295,7 +277,6 @@ const SUPABASE_URL='https://rdvbtzwnovdlmpuwuaih.supabase.co';
 const SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJkdmJ0endub3ZkbG1wdXd1YWloIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ4MTU1MjUsImV4cCI6MjA5MDM5MTUyNX0.2x_YqpkAjzI3YfT7Fug5zJ0RAYgthyCikCHTrPbot64';
 const sb=supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
 
-// DATA
 const MENUS=[
   {id:'compo_poulet',label:'Compo Poulet',emoji:'🍗',prix:1300,desc:'150g poulet · 130g riz · 150g courgettes',ingr:{poulet:150,riz:130,courgette:150}},
   {id:'compo_entrecote',label:'Compo Entrecôte',emoji:'🥩',prix:1500,desc:'150g entrecôte · 130g patate douce · 150g haricots verts',ingr:{entrecote:150,patate_douce:130,haricots:150}},
@@ -304,18 +285,24 @@ const MENUS=[
   {id:'compo_saumon',label:'Compo Saumon',emoji:'🐠',prix:1700,desc:'150g saumon · 130g riz · 150g haricots verts',ingr:{saumon:150,riz:130,haricots:150}},
   {id:'wrapeat',label:"Wrap'Eat",emoji:'🌯',prix:1200,desc:'Viande hachée · oeufs · moza · tomate · sauce BBQ',ingr:{hache:100}},
 ];
-const PACKAGES=[
-  {id:'allinclusive',label:'All Inclusive',desc:'Matin + midi + soir · 4 semaines · 15% remise',prix:66500,remise:true,featured:true},
-  {id:'fuelpack',label:'Fuel Pack',desc:'Matin + midi · 4 semaines · 15% remise',prix:43500,remise:true,featured:true},
-  {id:'midday',label:'Mid-Day Pack',desc:'Repas du midi · 4 semaines · 5% remise',prix:28000,remise:false},
-  {id:'10clean',label:'10 Clean',desc:'10 plats/semaine · 5 midi + 5 soir',prix:12900,remise:false},
-  {id:'5clean',label:'5 Clean',desc:'5 plats/semaine · 1 plat/jour',prix:6600,remise:false},
+
+// 3 packages featured + 2 petits
+const PKG_FEATURED=[
+  {id:'allinclusive',label:'All Inclusive',desc:'Tes plats du matin, du midi et du soir — menu répété 4 fois par mois. 2 livraisons par jour.',prix:66500,remise:true},
+  {id:'fuelpack',label:'Fuel Pack',desc:'Tes plats du matin et du midi — menu répété 4 fois par mois. 2 livraisons par jour.',prix:43500,remise:true},
+  {id:'midday',label:'Mid-Day Pack',desc:'Tes repas du midi uniquement — menu répété 4 fois par mois. 1 livraison par jour.',prix:28000,remise:false},
 ];
+const PKG_SM=[
+  {id:'10clean',label:'10 Clean',desc:'10 plats/semaine · 5 midi + 5 soir · 2 plats/jour',prix:12900},
+  {id:'5clean',label:'5 Clean',desc:'5 plats/semaine · 1 plat/jour du lundi au vendredi',prix:6600},
+];
+
 const PETITSDEJ=[
   {id:'oat_bowl',label:'Oat Bowl',emoji:'🥣',prix:1100,kcal:828,desc:'Flocons d\'avoine, whey, lait, miel · Chocolat, banane, fruits rouges'},
   {id:'egg_bowl',label:'Egg Bowl',emoji:'🍳',prix:900,kcal:344,desc:'4 oeufs, tomates, champignons, oignons'},
   {id:'waffle_bowl',label:'Waffle Bowl',emoji:'🧇',prix:1300,kcal:550,desc:'2 waffles maison · Miel, beurre de cacahuète, bananes, fruits rouges'},
 ];
+
 const INGR={
   proteines:[{key:'poulet',label:'Blanc de poulet',prix:35},{key:'entrecote',label:'Entrecôte',prix:50},{key:'hache',label:'Viande hachée',prix:45},{key:'thon',label:'Thon',prix:40},{key:'saumon',label:'Saumon',prix:70},{key:'meka',label:'Meka',prix:60}],
   glucides:[{key:'riz',label:'Riz',prix:10},{key:'penne',label:'Penne',prix:20},{key:'patate_douce',label:'Patate douce',prix:30},{key:'pomme_terre',label:'Écrasé PDT',prix:20},{key:'taro',label:'Taro',prix:35}],
@@ -327,33 +314,25 @@ const ALL_INGR=[...INGR.proteines,...INGR.glucides,...INGR.legumes,...INGR.assai
 const FERIES=['2026-01-01','2026-03-05','2026-04-03','2026-04-06','2026-05-01','2026-05-14','2026-05-25','2026-06-29','2026-07-14','2026-08-15','2026-11-01','2026-11-11','2026-12-25'];
 function isOuvre(d){const day=d.getDay();if(day===0||day===6)return false;return!FERIES.includes(d.toISOString().split('T')[0]);}
 function dKey(d){return d.toISOString().split('T')[0];}
-function addDays(d,n){const r=new Date(d);r.setDate(r.getDate()+n);return r;}
+function fmtDate(d){return d.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});}
 function get5JoursOuvres(){
   const days=[],d=new Date();d.setHours(0,0,0,0);
-  // Si avant 9h30 aujourd'hui est disponible, sinon on commence demain
-  const now=new Date();
-  const cutoff=new Date();cutoff.setHours(9,30,0,0);
+  const now=new Date(),cutoff=new Date();cutoff.setHours(9,30,0,0);
   if(now>cutoff)d.setDate(d.getDate()+1);
   while(days.length<5){if(isOuvre(d))days.push(new Date(d));d.setDate(d.getDate()+1);}
   return days;
 }
-function fmtDate(d){return d.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});}
 
-// STATE
-let cart=[];
-let selectedDate=null;
-let selectedPay=null;
-let composeQty={};
-let currentUser=null;
+let cart=[],selectedDate=null,selectedPay=null,composeQty={},currentUser=null;
 
 function detectZone(addr){
   const ZONES=[
     {id:'punaauia',kw:['punaauia','mahana park','maeva beach','punaruu']},
-    {id:'faaa',kw:["faaa","faa'a",'aeroport','aéroport','tua rata','outumaoro']},
-    {id:'papeete',kw:['papeete','vaima','paofai','hotel des postes','tipaerui','mamao','motootua']},
+    {id:'faaa',kw:["faaa","faa'a",'aeroport','aéroport','tua rata']},
+    {id:'papeete',kw:['papeete','vaima','paofai','hotel des postes','tipaerui','mamao']},
     {id:'pirae',kw:['pirae','fautaua']},
     {id:'arue',kw:['arue','point venus']},
-    {id:'mahina',kw:['mahina','papenoo']},
+    {id:'mahina',kw:['mahina','papenoo','pointe venus']},
   ];
   if(!addr)return'autre';
   const a=addr.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
@@ -361,9 +340,7 @@ function detectZone(addr){
   return'autre';
 }
 
-// RENDER HOME
 function renderHome(){
-  // Menus
   document.getElementById('menu-grid').innerHTML=MENUS.map(m=>`
     <div class="menu-card" onclick="addToCart({id:'${m.id}',label:'${m.label}',prix:${m.prix},ingr:${JSON.stringify(m.ingr)},type:'menu'})">
       <div class="menu-card-img">${m.emoji}</div>
@@ -374,18 +351,28 @@ function renderHome(){
       </div>
     </div>`).join('');
 
-  // Packages
-  document.getElementById('pkg-list').innerHTML=PACKAGES.map(p=>`
-    <div class="pkg-card ${p.featured?'featured':''}" onclick="addToCart({id:'${p.id}',label:'${p.label}',prix:${p.prix},ingr:{},type:'package'})">
-      <div class="pkg-card-left">
+  document.getElementById('pkg-list').innerHTML=PKG_FEATURED.map((p,i)=>`
+    <div class="pkg-card ${i<2?'featured':''}" onclick="addToCart({id:'${p.id}',label:'${p.label}',prix:${p.prix},ingr:{},type:'package'})">
+      <div class="pkg-card-top">
         <div class="pkg-card-name">${p.label}</div>
-        <div class="pkg-card-desc">${p.desc}</div>
-        ${p.remise?`<div class="remise-badge">-15% inclus</div>`:''}
+        ${p.remise?`<div class="remise-badge">-15%</div>`:''}
       </div>
-      <div class="pkg-card-prix">${p.prix.toLocaleString('fr-FR')} XPF</div>
+      <div class="pkg-card-desc">${p.desc}</div>
+      <div class="pkg-card-bottom">
+        <div class="pkg-card-prix">${p.prix.toLocaleString('fr-FR')} XPF</div>
+        <button class="pkg-cta">Choisir →</button>
+      </div>
     </div>`).join('');
 
-  // Petits déj
+  document.getElementById('pkg-sm-list').innerHTML=PKG_SM.map(p=>`
+    <div class="pkg-sm" onclick="addToCart({id:'${p.id}',label:'${p.label}',prix:${p.prix},ingr:{},type:'package'})">
+      <div class="pkg-sm-left">
+        <div class="pkg-sm-name">${p.label}</div>
+        <div class="pkg-sm-desc">${p.desc}</div>
+      </div>
+      <div class="pkg-sm-prix">${p.prix.toLocaleString('fr-FR')} XPF</div>
+    </div>`).join('');
+
   document.getElementById('pdj-list').innerHTML=PETITSDEJ.map(p=>`
     <div class="pdj-card" onclick="addToCart({id:'${p.id}',label:'${p.label}',prix:${p.prix},ingr:{},type:'petitdej'})">
       <div class="pdj-icon">${p.emoji}</div>
@@ -400,7 +387,6 @@ function renderHome(){
     </div>`).join('');
 }
 
-// COMPOSE
 function renderCompose(){
   const cats={proteines:'🥩 Protéines',glucides:'🌾 Glucides',legumes:'🥦 Légumes',assaisonnements:'🫙 Assaisonnements'};
   document.getElementById('compose-form').innerHTML=Object.entries(cats).map(([cat,title])=>`
@@ -418,16 +404,8 @@ function renderCompose(){
   calcComposeTotal();
 }
 
-function toggleIngr(key){
-  if(composeQty[key]>0)delete composeQty[key];
-  else composeQty[key]=100;
-  renderCompose();
-}
-function changeQty(key,delta){
-  composeQty[key]=Math.max(0,(composeQty[key]||0)+delta);
-  if(composeQty[key]===0)delete composeQty[key];
-  renderCompose();
-}
+function toggleIngr(key){if(composeQty[key]>0)delete composeQty[key];else composeQty[key]=100;renderCompose();}
+function changeQty(key,delta){composeQty[key]=Math.max(0,(composeQty[key]||0)+delta);if(composeQty[key]===0)delete composeQty[key];renderCompose();}
 function calcComposeTotal(){
   const total=Object.entries(composeQty).reduce((s,[k,v])=>s+(ALL_INGR.find(i=>i.key===k)?.prix||0)*v/10,0);
   document.getElementById('compose-total').textContent=Math.round(total).toLocaleString('fr-FR')+' XPF';
@@ -438,25 +416,19 @@ function addComposeToCart(){
   const prix=calcComposeTotal();
   const desc=Object.entries(composeQty).map(([k,v])=>`${ALL_INGR.find(i=>i.key===k)?.label} ${v}g`).join(' · ');
   addToCart({id:'compose_'+Date.now(),label:'Je Compose',desc,prix,ingr:{...composeQty},type:'compose'});
-  composeQty={};
-  renderCompose();
+  composeQty={};renderCompose();
 }
 
 function addToCart(item){
   if(!currentUser){showToast('Connecte-toi pour commander !');showAuth('login');return;}
   cart.push({...item,cartId:Date.now()});
-  updateCartBadge();
-  showToast('Ajouté au panier ✓');
-  showPage('page-home');
+  updateCartBadge();showToast('Ajouté au panier ✓');showPage('page-home');
 }
-
 function updateCartBadge(){
-  const badge=document.getElementById('cart-badge');
-  if(cart.length>0){badge.style.display='flex';badge.textContent=cart.length;}
-  else badge.style.display='none';
+  const b=document.getElementById('cart-badge');
+  if(cart.length>0){b.style.display='flex';b.textContent=cart.length;}else b.style.display='none';
 }
 
-// CART PAGE
 function showCartPage(){
   if(!currentUser){showToast('Connecte-toi pour commander !');showAuth('login');return;}
   renderCart();showPage('page-cart');
@@ -464,15 +436,11 @@ function showCartPage(){
 function renderCart(){
   if(cart.length===0){
     document.getElementById('cart-items').innerHTML='<div style="text-align:center;padding:24px;color:var(--stone);font-size:13px">Ton panier est vide</div>';
-    document.getElementById('cart-total-box').innerHTML='';
-    return;
+    document.getElementById('cart-total-box').innerHTML='';return;
   }
   document.getElementById('cart-items').innerHTML=cart.map(item=>`
     <div class="cart-item">
-      <div>
-        <div class="cart-item-name">${item.label}</div>
-        ${item.desc?`<div class="cart-item-detail">${item.desc}</div>`:''}
-      </div>
+      <div><div class="cart-item-name">${item.label}</div>${item.desc?`<div class="cart-item-detail">${item.desc}</div>`:''}</div>
       <div style="display:flex;align-items:center;gap:8px">
         <div class="cart-item-prix">${item.prix.toLocaleString('fr-FR')} XPF</div>
         <button class="cart-item-del" onclick="removeFromCart(${item.cartId})">×</button>
@@ -484,23 +452,18 @@ function renderCart(){
       <div class="cart-total-row"><span>${cart.length} article${cart.length>1?'s':''}</span><span>${total.toLocaleString('fr-FR')} XPF</span></div>
       <div class="cart-total-row big"><span>Total</span><span>${total.toLocaleString('fr-FR')} XPF</span></div>
     </div>`;
-  // Dates
   const jours=get5JoursOuvres();
   document.getElementById('date-list').innerHTML=jours.map((d,i)=>`
     <div class="date-item ${selectedDate===dKey(d)?'selected':''}" onclick="selectDate('${dKey(d)}',this)">
-      <div>
-        <div class="date-item-day">${i===0?'Demain':d.toLocaleDateString('fr-FR',{weekday:'long'})}</div>
-        <div class="date-item-full">${fmtDate(d)}</div>
-      </div>
+      <div><div class="date-item-day">${i===0?'Demain':d.toLocaleDateString('fr-FR',{weekday:'long'})}</div><div class="date-item-full">${fmtDate(d)}</div></div>
       <div class="date-check">${selectedDate===dKey(d)?'✓':''}</div>
     </div>`).join('');
-  // Paiements
   const pays=[
     {id:'paye_especes',icon:'💵',name:'Espèces',desc:'Paiement en cash à la livraison'},
     {id:'paye_tpe',icon:'💳',name:'CB via TPE',desc:'Carte bancaire à la livraison'},
     {id:'paye_virement',icon:'🏦',name:'Virement',desc:'Virement bancaire avant livraison'},
     {id:'paye_tamaa',icon:'🎫',name:'Pass Tamaa',desc:'Paiement via Pass Tamaa'},
-    {id:'paye_payzen',icon:'📱',name:'Payzen (en ligne)',desc:'Paiement sécurisé en ligne'},
+    {id:'paye_payzen',icon:'📱',name:'Payzen',desc:'Paiement sécurisé en ligne'},
   ];
   document.getElementById('pay-list').innerHTML=pays.map(p=>`
     <div class="pay-item ${selectedPay===p.id?'selected':''}" onclick="selectPay('${p.id}',this)">
@@ -526,34 +489,20 @@ async function validerCommande(){
       if(item.type==='package'){
         await sb.from('pkg_clients').insert({nom:currentUser.user_metadata?.nom||currentUser.email,tel:currentUser.user_metadata?.tel||'',addr,zone,pkg_key:item.id,start_date:selectedDate,statut:'attente'});
       } else {
-        await sb.from('commandes').insert({
-          nom:currentUser.user_metadata?.nom||currentUser.email,
-          tel:currentUser.user_metadata?.tel||'',
-          addr,zone,type:item.type,
-          produit_label:item.label,prix:item.prix,
-          paie:selectedPay,statut:'attente',
-          statut_paiement:selectedPay==='paye_payzen'?'paye_payzen':'nonpaye',
-          ingr:item.ingr||{},
-          dates:[selectedDate],
-          user_id:currentUser.id
-        });
+        await sb.from('commandes').insert({nom:currentUser.user_metadata?.nom||currentUser.email,tel:currentUser.user_metadata?.tel||'',addr,zone,type:item.type,produit_label:item.label,prix:item.prix,paie:selectedPay,statut:'attente',statut_paiement:selectedPay==='paye_payzen'?'paye_payzen':'nonpaye',ingr:item.ingr||{},dates:[selectedDate],user_id:currentUser.id});
       }
     }
-    // Confirmation
     const dateObj=new Date(selectedDate+'T12:00:00');
     document.getElementById('confirm-details').innerHTML=`
       <div class="confirm-row"><span>Articles</span><span>${cart.length}</span></div>
       <div class="confirm-row"><span>Livraison</span><span>${fmtDate(dateObj)}</span></div>
       <div class="confirm-row"><span>Adresse</span><span>${addr}</span></div>
-      <div class="confirm-row"><span>Paiement</span><span>${selectedPay.replace('paye_','')}</span></div>
       <div class="confirm-row"><span>Total</span><span>${total.toLocaleString('fr-FR')} XPF</span></div>`;
     cart=[];selectedDate=null;selectedPay=null;
-    updateCartBadge();
-    showPage('page-confirm');
+    updateCartBadge();showPage('page-confirm');
   }catch(e){showToast('Erreur : '+e.message);}
 }
 
-// AUTH
 function showAuth(mode){
   showPage('page-auth');
   const isLogin=mode==='login';
@@ -579,10 +528,8 @@ async function doLogin(){
   const errEl=document.getElementById('auth-error');
   const {data,error}=await sb.auth.signInWithPassword({email,password:pwd});
   if(error){errEl.style.display='block';errEl.textContent=error.message;return;}
-  currentUser=data.user;
-  onLogin();
+  currentUser=data.user;onLogin();
 }
-
 async function doRegister(){
   const email=document.getElementById('auth-email').value.trim();
   const pwd=document.getElementById('auth-pwd').value;
@@ -591,31 +538,21 @@ async function doRegister(){
   const errEl=document.getElementById('auth-error');
   const {data,error}=await sb.auth.signUp({email,password:pwd,options:{data:{nom,tel}}});
   if(error){errEl.style.display='block';errEl.textContent=error.message;return;}
-  currentUser=data.user;
-  onLogin();
+  currentUser=data.user;onLogin();
 }
-
-function onLogin(){
-  updateNavForUser();
-  showToast('Bienvenue sur HealthEat ! 🌿');
-  showPage('page-home');
-}
-
+function onLogin(){updateNavForUser();showToast('Bienvenue sur HealthEat ! 🌿');showPage('page-home');}
 function updateNavForUser(){
   if(currentUser){
     const initials=(currentUser.user_metadata?.nom||currentUser.email||'?').charAt(0).toUpperCase();
     document.getElementById('nav-right').innerHTML=`<button class="nav-account" onclick="showAccountPage()">${initials}</button>`;
   } else {
-    document.getElementById('nav-right').innerHTML=`
-      <button class="nav-btn" onclick="showAuth('login')">Connexion</button>
-      <button class="nav-btn primary" onclick="showAuth('register')">S'inscrire</button>`;
+    document.getElementById('nav-right').innerHTML=`<button class="nav-btn" onclick="showAuth('login')">Connexion</button><button class="nav-btn primary" onclick="showAuth('register')">S'inscrire</button>`;
   }
 }
 
-// ACCOUNT PAGE
 async function showAccountPage(){
   if(!currentUser){showAuth('login');return;}
-  showPage('page-account');
+  showPage('page-account');setActiveNav(3);
   const nom=currentUser.user_metadata?.nom||currentUser.email||'';
   const email=currentUser.email||'';
   const initials=nom.charAt(0).toUpperCase();
@@ -650,39 +587,22 @@ async function showAccountPage(){
       </div>
       <button style="width:100%;padding:12px;border-radius:10px;background:#FFEBEE;color:#C62828;border:none;font-size:13px;font-weight:700;cursor:pointer;margin-top:8px" onclick="doLogout()">Se déconnecter</button>
     </div>`;
-  setActiveNav(3);
 }
+async function doLogout(){await sb.auth.signOut();currentUser=null;updateNavForUser();showPage('page-home');showToast('Déconnecté');}
 
-async function doLogout(){
-  await sb.auth.signOut();
-  currentUser=null;
-  updateNavForUser();
-  showPage('page-home');
-  showToast('Déconnecté');
-}
-
-// NAVIGATION
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   if(id==='page-compose')renderCompose();
   window.scrollTo(0,0);
 }
-function setActiveNav(idx){
-  document.querySelectorAll('.bnav-item').forEach((b,i)=>b.classList.toggle('active',i===idx));
-}
-function showToast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),2500);
-}
+function setActiveNav(idx){document.querySelectorAll('.bnav-item').forEach((b,i)=>b.classList.toggle('active',i===idx));}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
 
-// INIT
 async function init(){
   const {data:{user}}=await sb.auth.getUser();
   if(user){currentUser=user;updateNavForUser();}
   renderHome();
-  // Ajouter colonne user_id si pas encore fait
 }
 init();
 </script>
