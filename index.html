@@ -786,14 +786,16 @@ let selectedSauce = 'Sans sauce';
 // ═══════════════════════════════════════
 async function init() {
   showLoader(true);
-  const { data: { session } } = await sb.auth.getSession();
-  if (session) {
-    currentUser = session.user;
-    await loadUserProfile();
-    showApp();
-  } else {
-    showAuthScreen();
+  try {
+    const { data: { session } } = await sb.auth.getSession();
+    if (session) {
+      currentUser = session.user;
+      await loadUserProfile();
+    }
+  } catch(e) {
+    console.log('Supabase non disponible, mode demo');
   }
+  showApp();
   showLoader(false);
   initComposer();
   checkOrderStatus();
